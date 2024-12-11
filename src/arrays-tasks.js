@@ -533,7 +533,9 @@ function findCommonElements(arr1, arr2) {
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => longest is [7, 40, 80] => 3
  */
 function findLongestIncreasingSubsequence(nums) {
+  // из редьюса выбираем максимальное число, это длина самой длинной возрастающей послед-ти
   return Math.max(
+    // в редьюсе меняем числа на номер в возрастающей последовательности, напр., [1, 2, 1, 2, 3, 1, 2]
     ...nums.reduce((acc, cur, i, arr) => {
       if (i === 0 || cur < arr[i - 1]) {
         acc.push(1);
